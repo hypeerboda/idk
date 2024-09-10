@@ -1,0 +1,267 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        .header-icons a {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .header-icons a:hover {
+            transform: scale(1.1);
+        }
+        .header-icons a:focus {
+            transform: scale(1.1);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .icon-outline {
+            color: white;
+            -webkit-text-stroke: 1px black;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .sticky-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: 50;
+            display: none;
+        }
+        .sticky-header.show {
+            display: flex;
+        }
+        .scroll-indicator {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+        }
+        .scroll-indicator div {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+        .scroll-indicator div.active {
+            background-color: rgba(128, 0, 128, 0.8);
+        }
+        .header-icons i {
+            font-size: 1rem; /* Decrease the size of the icons */
+        }
+        .header-icons a {
+            padding: 0.5rem 1rem; /* Make the buttons wider */
+        }
+        @media (max-width: 640px) {
+            .header-icons a span {
+                display: none; /* Hide text on mobile view */
+            }
+            .header-icons a {
+                padding: 0.5rem; /* Minimize padding on mobile view */
+            }
+            .mobile-lower {
+                margin-top: 16rem; /* Lower the elements on mobile view */
+            }
+        }
+    </style>
+</head>
+<body class="relative h-screen overflow-y-scroll">
+    <header class="sticky-header py-4 fade-in flex justify-end items-center space-x-2 pr-4 header-icons">
+        <a href="mailto:info@example.com" class="bg-black text-white rounded-full flex items-center space-x-1">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        <a href="https://wa.me/201005747400" class="bg-black text-white rounded-full flex items-center space-x-1">
+            <i class="fab fa-whatsapp"></i>
+            <span>WHATSAPP</span>
+        </a>
+        <a href="tel:+20228404070" class="bg-black text-white rounded-full flex items-center space-x-1" onclick="addContact()">
+            <i class="fas fa-phone"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://www.facebook.com/MouradNadeemforsupplying" class="bg-black text-white rounded-full flex items-center space-x-1">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+        </a>
+        <a href="https://www.google.com/maps/place/%D8%A7%D9%85+%D8%A7%D9%86%D8%AF+%D8%A7%D9%8A%D9%87+%D9%84%D9%84%D8%AA%D9%88%D8%B1%D9%8A%D8%AF%D8%A7%D8%AA+%D9%88%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%E2%80%AD/@30.0112893,31.3094643,17z/data=!3m1!4b1!4m6!3m5!1s0x145839382370f863:0xd8a9a1d77a4510c1!8m2!3d30.0112893!4d31.3094643!16s%2Fg%2F11h75kskqk?entry=ttu&g_ep=EgoyMDI0MDkwNC4wIKXMDSoASAFQAw%3D%3D" class="bg-black text-white rounded-full flex items-center space-x-1">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Location</span>
+        </a>
+        <a href="https://www.linkedin.com/company/mourad-nadeem-m-a/" class="bg-black text-white rounded-full flex items-center space-x-1">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+    </header>
+    <div id="page1" class="h-screen relative">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" style="animation: slowVideo 20s linear infinite;">
+            <source src="https://videos.pexels.com/video-files/7011009/7011009-uhd_4096_2160_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="flex flex-col items-center justify-center h-full text-white text-center relative z-10 fade-in">
+            <div class="mt-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to the M&A Company</h1>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full px-4 mt-8">
+                <a href="#page2" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Insulations</span>
+                </a>
+                <a href="#page3" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Aquariums</span>
+                </a>
+                <a href="#page4" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Swimming Pools</span>
+                </a>
+                <a href="#page5" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Fountains</span>
+                </a>
+                <a href="#page6" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Waterfalls</span>
+                </a>
+                <a href="#page7" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Water Curtains</span>
+                </a>
+                <a href="#page8" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Ponds</span>
+                </a>
+                <a href="#page9" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                    <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Landscapes</span>
+                </a>
+            </a>
+            <a href="#page10" class="bg-black bg-opacity-70 text-white py-4 rounded-lg flex items-center justify-center">
+                <span class="ml-2 text-2xl font-bold" style="font-family: 'Roboto', sans-serif;">Interior & Exterior Design</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="page2" class="h-screen relative bg-gray-200">
+        <div class="flex flex-col items-center justify-center h-full text-black text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 2 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the second page.</p>
+        </div>
+    </div>
+    <div id="page3" class="h-screen relative">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" style="animation: slowVideo 20s linear infinite;">
+            <source src="https://videos.pexels.com/video-files/1675448/1675448-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+        <div class="flex flex-col items-center justify-center h-full text-white text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 3 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the third page.</p>
+        </div>
+    </div>
+    <div id="page4" class="h-screen relative">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover" style="animation: slowVideo 20s linear infinite;">
+            <source src="https://videos.pexels.com/video-files/3859482/3859482-uhd_3840_2160_24fps.mp4" type="video/mp4">
+        </video>
+        <div class="flex flex-col items-center justify-center h-full text-white text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 4 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the fourth page.</p>
+        </div>
+    </div>
+    <div id="page5" class="h-screen relative bg-gray-500">
+        <div class="flex flex-col items-center justify-center h-full text-black text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 5 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the fifth page.</p>
+        </div>
+    </div>
+    <div id="page6" class="h-screen relative bg-gray-600">
+        <div class="flex flex-col items-center justify-center h-full text-black text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 6 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the sixth page.</p>
+        </div>
+    </div>
+    <div id="page7" class="h-screen relative bg-gray-700">
+        <div class="flex flex-col items-center justify-center h-full text-black text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 7 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the seventh page.</p>
+        </div>
+    </div>
+    <div id="page8" class="h-screen relative bg-gray-800">
+        <div class="flex flex-col items-center justify-center h-full text-black text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 8 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the eighth page.</p>
+        </div>
+    </div>
+    <div id="page9" class="h-screen relative bg-gray-900">
+        <div class="flex flex-col items-center justify-center h-full text-white text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 9 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the ninth page.</p>
+        </div>
+    </div>
+    <div id="page10" class="h-screen relative bg-gray-1000">
+        <div class="flex flex-col items-center justify-center h-full text-white text-center relative z-10 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Page 10 Content</h1>
+            <p class="text-lg md:text-xl mb-8">This is the content of the tenth page.</p>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <div id="indicator1" class="active"></div>
+        <div id="indicator2"></div>
+        <div id="indicator3"></div>
+        <div id="indicator4"></div>
+        <div id="indicator5"></div>
+        <div id="indicator6"></div>
+        <div id="indicator7"></div>
+        <div id="indicator8"></div>
+        <div id="indicator9"></div>
+        <div id="indicator10"></div>
+    </div>
+    <script>
+        function addContact() {
+            const vCardData = `
+BEGIN:VCARD
+VERSION:3.0
+FN:M&A Company
+TEL:+20228404070
+END:VCARD
+            `;
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'M&A_Company.vcf';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        window.addEventListener('scroll', function() {
+            const stickyHeader = document.querySelector('.sticky-header');
+            const page2 = document.getElementById('page2');
+            const page3 = document.getElementById('page3');
+            const page4 = document.getElementById('page4');
+            const page2Top = page2.offsetTop;
+            const page3Top = page3.offsetTop;
+            const page4Top = page4.offsetTop;
+            const indicators = document.querySelectorAll('.scroll-indicator div');
+            const pages = document.querySelectorAll('div[id^="page"]');
+
+            pages.forEach((page, index) => {
+                if (window.scrollY >= page.offsetTop && window.scrollY < page.offsetTop + page.offsetHeight) {
+                    indicators.forEach(indicator => indicator.classList.remove('active'));
+                    indicators[index].classList.add('active');
+                }
+            });
+
+            if (window.scrollY >= page2Top || window.scrollY >= page3Top || window.scrollY >= page4Top) {
+                stickyHeader.classList.add('show');
+            } else {
+                stickyHeader.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
